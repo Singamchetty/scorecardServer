@@ -17,7 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Create a reusable MongoClient instance for connection pooling
-const client = new MongoClient(connectionString);
+const client = new MongoClient(connectionString,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  connectTimeoutMS: 30000, // Connection timeout in milliseconds
+});
  client.connect()
   .then(() => {
     console.log("Connected to MongoDB");
