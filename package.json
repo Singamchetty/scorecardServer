@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "netlify deploy --prod"
+    "build": "netlify deploy --prod",
+    "server":"node --watch ./functions/api.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
